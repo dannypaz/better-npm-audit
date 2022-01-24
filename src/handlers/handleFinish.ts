@@ -7,10 +7,11 @@ import { processAuditJson } from '../utils/vulnerability';
  * @param  {String} jsonBuffer    NPM audit stringified JSON payload
  * @param  {Number} auditLevel    The level of vulnerabilities we care about
  * @param  {Array} exceptionIds   List of vulnerability IDs to exclude
+ * @param  {Boolean} filter        Vulnerability level filter
  * @return {undefined}
  */
-export default function handleFinish(jsonBuffer: string, auditLevel: AuditLevel, exceptionIds: number[]): void {
-  const { unhandledIds, vulnerabilityIds, report, failed } = processAuditJson(jsonBuffer, auditLevel, exceptionIds);
+export default function handleFinish(jsonBuffer: string, auditLevel: AuditLevel, exceptionIds: number[], filter: boolean): void {
+  const { unhandledIds, vulnerabilityIds, report, failed } = processAuditJson(jsonBuffer, auditLevel, exceptionIds, filter);
 
   // If unable to process the audit JSON
   if (failed) {

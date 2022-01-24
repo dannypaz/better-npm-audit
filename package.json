@@ -21,7 +21,7 @@
     "lint": "eslint .",
     "qc": "npm run test && npm run lint",
     "clean": "rimraf lib",
-    "prebuild": "npm run qc && npm run clean",
+    "prebuild": "npm run clean",
     "build": "tsc",
     "postbuild": "cp README.md lib",
     "publish:live": "npm run build && npm publish lib --tag latest",
