@@ -46,7 +46,7 @@ program
   .description('execute npm audit')
   .option('-x, --exclude <ids>', 'Exceptions or the vulnerabilities ID(s) to exclude.')
   .option('-l, --level <auditLevel>', 'The minimum audit level to validate.')
-  .option('-f, --filter <filter>', 'Whether to filter report by level')
+  .option('-f, --filter', 'Whether to filter report by level')
   .option('-p, --production', 'Skip checking the devDependencies.')
   .option('-r, --registry <url>', 'The npm registry url to use.')
   .action((options: CommandOptions) => handleInput(options, callback));
